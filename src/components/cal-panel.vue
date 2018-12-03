@@ -1,10 +1,5 @@
 <template>
   <div class="cal-wrapper">
-    <div class="cal-header">
-      <div class="l" @click="preMonth"><div class="arrow-left icon">&nbsp;</div></div>
-      <div class="title">{{curYearMonth}}</div>
-      <div class="r" @click="nextMonth"><div class="arrow-right icon">&nbsp;</div></div>
-    </div>
     <div class="cal-body">
       <div class="weeks">
         <span
@@ -25,12 +20,11 @@
           :key="date.date"
           >
           <p class="date-num"
-            @click="handleChangeCurday(date)"
-            :style="{color: date.title != undefined ? ((date.date == selectedDay) ? '#fff' : customColor) : 'inherit'}">
+            @click="handleChangeCurday(date)">
             {{date.status ? date.date.split('/')[2] : '&nbsp;'}}</p>
-          <span v-if="date.status ? (today == date.date) : false" class="is-today" :style="{backgroundColor: customColor }" ></span>
-          <span v-if="date.status ? (date.title != undefined) : false" class="is-event"
-            :style="{borderColor: customColor, backgroundColor: (date.date == selectedDay) ? customColor : 'inherit'}"></span>
+          <span :class="{'is-today':date.status ? (today == date.date) : false,'is-event-dot':date.status ? (date.title != undefined) : false}"></span>
+          <span class="eventSpan" :class="{'is-event':date.status ? (date.title != undefined) : false}"
+            ></span>
         </div>
       </div>
     </div>
@@ -101,6 +95,7 @@ export default {
           })
           tempArr.push(tempItem)
       }
+      console.log(tempArr)
       return tempArr
     },
     today () {
@@ -125,6 +120,7 @@ export default {
       this.$emit('month-changed', this.curYearMonth)
     },
     handleChangeCurday (date) {
+      console.log(date)
       if (date.status) {
         this.$emit('cur-day-changed', date.date)
       }

@@ -63,8 +63,8 @@ export default {
       } else {
         return {
           options: {
-            locale: 'en', //zh
-            color: ' #f29543'
+            locale: 'zh', //zh
+            color: ' rgb(254,91,48)'
           },
           params: {
               curYear: dateObj.getFullYear(),
@@ -99,11 +99,10 @@ export default {
       let events = this.events.filter(function(event) {
         return isEqualDateStr(event.date, date)
       })
-      if (events.length > 0) {
-        this.selectedDayEvents = {
-          date: date,
-          events: events
-        }
+      console.log(events)
+      this.selectedDayEvents = {
+        date: date,
+        events: events
       }
       this.$emit('day-changed', {
         date: date,
@@ -141,7 +140,7 @@ export default {
 }
 </script>
 <style lang="less">
-@base-orange: #f29543;
+@base-orange: rgb(254,91,48);
 @white: #ffffff;
 @gray: #e0e0e0;
 @gray-dark: #b1b1b1;
@@ -154,17 +153,26 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
     .cal-wrapper{
-      width: 50%;
-      padding: 100px 50px;
+      width: 100%;
       .date-num{
-        line-height: 50px;
+        line-height: 65px;
+        color: #333;
+      }
+    }
+    .today{
+      .date-num{
+        color: rgb(41,138,255);
+      }
+    }
+    .event{
+      .date-num{
+        color: rgb(254,91,48);
       }
     }
     .events-wrapper{
       width: 50%;
-      background-color: @base-orange;
       color: @white;
-      padding: 40px 45px;
+      padding: 20px 45px 40px;
       position: absolute;
       left: 50%;
       top: 0;
@@ -178,7 +186,7 @@ export default {
       width: 100%;
       padding: 10px 5px;
       .date-num{
-        line-height: 42px;
+        line-height: 60px;
       }
     }
     .events-wrapper{
@@ -208,40 +216,11 @@ export default {
     background: rgba(0,0,0,.2);
   }
   .cal-wrapper{
-    .cal-header{
-      position: relative;
-      width: 100%;
-      background-color: @white;
-      // box-shadow: 0 6px 5px rgba(0,0,0,.1);
-      font-weight: 500;
-      overflow: hidden;
-      padding-bottom: 10px;
-      &>div{
-        float: left;
-        line-height: 20px;
-        padding: @large-padding;
-      }
-      .title{
-        width: 60%;
-        text-align: center;
-      }
-      .l{
-        text-align: left;
-        width: 20%;
-        cursor: pointer;
-        user-select: none;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-      .r{
-        text-align: right;
-        width: 20%;
-        cursor: pointer;
-        user-select: none;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-    }
     .cal-body{
-      width: 100%;
+      width: 50%;
+      float: left;
+      border: 1px solid #eee;
+      padding: 10px;
       .weeks{
         width: 100%;
         overflow: hidden;
@@ -269,19 +248,21 @@ export default {
             font-size: 1rem;
             position: relative;
             z-index: 3;
-          }
-          &.event{
-            cursor: pointer;
+            cursor: pointer
           }
           &.selected-day{
+            p{
+              color: #fff
+            }
+            .eventSpan{
+              background: rgb(41,138,255);
+            }
             .is-event{
-              background-color: @base-orange;
+              background-color: rgb(254,91,48);
             }
           }
-          .is-event{
+          .eventSpan{
             content: '';
-            border: 1px solid @base-orange;
-            background-color: #fff;
             border-radius: 50%;
             width: 36px;
             height: 36px;
@@ -292,16 +273,16 @@ export default {
             margin-left: -18px;
             margin-top: -19px;
           }
-          .is-today{
+          .is-event-dot{
             content: '';
-            background-color: @base-orange;
+            background: rgb(254,91,48);
             border-radius: 50%;
             opacity: .8;
             width: 12px;
             height: 4px;
             position: absolute;
             left: 50%;
-            top: 50%;
+            top: 80%;
             z-index: 2;
             margin-left: -6px;
             margin-top: 8px;
@@ -311,7 +292,8 @@ export default {
     }
   }
   .events-wrapper{
-    border-radius: 10px;
+    margin-left: -1px;
+    border: 1px solid #eee;
     .cal-events{
       height: 95%;
       overflow-y: auto;

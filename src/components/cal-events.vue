@@ -1,12 +1,12 @@
 <template>
-  <div class="events-wrapper" :style="bgColor">
+  <div class="events-wrapper">
     <h2 class="date">
       {{dayEventsTitle}}
     </h2>
     <div class="cal-events">
       <slot>
         <div v-for="(event, index) in events" class="event-item" :key="index">
-          <cal-event-item :event="event" :index="index" :locale="locale"></cal-event-item>
+          </svg-icon><cal-event-item :event="event" :index="index" :locale="locale"></cal-event-item>
         </div>
       </slot>
     </div>
@@ -60,9 +60,6 @@ export default {
     },
     events () {
       return this.dayEvents.events
-    },
-    bgColor () {
-      return {backgroundColor: this.color}
     }
   },
   methods: {

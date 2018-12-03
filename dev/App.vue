@@ -26,40 +26,49 @@ export default {
   data () {
     return {
       demoEvents: [{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
         title: 'Title-1',
-        desc: 'longlonglong description'
+        desc: 'longlonglong description',
+        type: '1'
       },{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
         title: 'Title-1',
-        desc: 'longlonglong description'
+        desc: 'longlonglong description',
+        type: '1'
       },{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
         title: 'Title-1',
-        desc: 'longlonglong description'
+        desc: 'longlonglong description',
+        type: '1'
       },{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
         title: 'Title-1',
-        desc: 'longlonglong description'
+        desc: 'longlonglong description',
+        type: '1'
       },{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
         title: 'Title-1',
-        desc: 'longlonglong description'
+        desc: 'longlonglong description',
+        type: '0'
       },{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
         title: 'Title-1',
-        desc: 'longlonglong description'
+        desc: 'longlonglong description',
+        type: '0'
       },{
         date: `${today.getFullYear()}/${today.getMonth() + 1}/15`,
         title: 'Title-1',
-        desc: 'longlonglong description'
+        desc: 'longlonglong description',
+        type: '0'
       },{
         date: `${today.getFullYear()}/${today.getMonth() + 1}/24`,
-        title: 'Title-2'
+        title: 'Title-2',
+        type: '0'
       },{
         date: `${today.getFullYear()}/${today.getMonth() === 11 ? 1 : today.getMonth() + 2}/06`,
         title: 'Title-3',
-        desc: 'description'
+        desc: 'description',
+        type: '0'
       }]
     }
   },
