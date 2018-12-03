@@ -210,12 +210,12 @@ module.exports = function normalizeComponent (
     notHaveEvents: 'Not Have Events'
   },
   zh: {
-    dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+    dayNames: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
     monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
     format: 'yyyy年MM月',
     fullFormat: 'yyyy年MM月dd日',
-    dayEventsTitle: '全部事件',
-    notHaveEvents: '没有事件'
+    dayEventsTitle: '全部回款',
+    notHaveEvents: '没有回款'
   },
   us: {
     dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -289,6 +289,22 @@ module.exports = function normalizeComponent (
     dayEventsTitle: 'Alla händelser',
     notHaveEvents: 'Inga händelser'
   },
+  no: {
+    dayNames: ["Søn", "Man", "Tir", "Ons", "Tor", "Fre", "Lør"],
+    monthNames: ["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"],
+    format: 'MM/yyyy',
+    fullFormat: 'dd/MM/yyyy',
+    dayEventsTitle: 'Alle hendelser',
+    notHaveEvents: 'Ingen hendelser'
+  },
+  'no-nn': {
+    dayNames: ["Søn", "Mån", "Tys", "Ons", "Tor", "Fre", "Lau"],
+    monthNames: ["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"],
+    format: 'MM/yyyy',
+    fullFormat: 'dd/MM/yyyy',
+    dayEventsTitle: 'Alle hendinger',
+    notHaveEvents: 'Ingen hendinger'
+  },
   de: {
     dayNames: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
     monthNames: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
@@ -304,6 +320,30 @@ module.exports = function normalizeComponent (
     fullFormat: 'dd/MM/yyyy',
     dayEventsTitle: 'Tất cả sự kiện',
     notHaveEvents: 'Không có sự kiện nào'
+  },
+  ua: {
+    dayNames: ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+    monthNames: ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
+    format: 'MM.yyyy',
+    fullFormat: 'dd.MM.yyyy',
+    dayEventsTitle: 'Усі події',
+    notHaveEvents: 'Події відсутні'
+  },
+  th: {
+    dayNames: ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"],
+    monthNames: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"],
+    format: 'MM/yyyy',
+    fullFormat: 'dd/MM/yyyy',
+    dayEventsTitle: 'เหตุการณ์',
+    notHaveEvents: 'ไม่มีเหตุการณใดๆ'
+  },
+  hu: {
+    dayNames: ["Hé", "Ke", "Sze", "Сs", "Pé", "Szo", "Va"],
+    monthNames: ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"],
+    format: 'yyyy MM',
+    fullFormat: 'yyyy.MM.dd',
+    dayEventsTitle: 'Események',
+    notHaveEvents: 'Nincs esemény'
   }
 });
 
@@ -476,9 +516,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     events: function events() {
       return this.dayEvents.events;
-    },
-    bgColor: function bgColor() {
-      return { backgroundColor: this.color };
     }
   },
   methods: {
@@ -494,12 +531,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__i18n_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tools_js__ = __webpack_require__(0);
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -601,6 +632,7 @@ var inBrowser = typeof window !== 'undefined';
         });
         tempArr.push(tempItem);
       }
+      console.log(tempArr);
       return tempArr;
     },
     today: function today() {
@@ -625,6 +657,7 @@ var inBrowser = typeof window !== 'undefined';
       this.$emit('month-changed', this.curYearMonth);
     },
     handleChangeCurday: function handleChangeCurday(date) {
+      console.log(date);
       if (date.status) {
         this.$emit('cur-day-changed', date.date);
       }
@@ -709,8 +742,8 @@ var inBrowser = typeof window !== 'undefined';
       } else {
         return {
           options: {
-            locale: 'en', //zh
-            color: ' #f29543'
+            locale: 'zh', //zh
+            color: ' rgb(254,91,48)'
           },
           params: {
             curYear: dateObj.getFullYear(),
@@ -746,12 +779,11 @@ var inBrowser = typeof window !== 'undefined';
       var events = this.events.filter(function (event) {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__tools_js__["a" /* isEqualDateStr */])(event.date, date);
       });
-      if (events.length > 0) {
-        this.selectedDayEvents = {
-          date: date,
-          events: events
-        };
-      }
+      console.log(events);
+      this.selectedDayEvents = {
+        date: date,
+        events: events
+      };
       this.$emit('day-changed', {
         date: date,
         events: events
@@ -974,14 +1006,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "events-wrapper",
-    style: (_vm.bgColor)
+    staticClass: "events-wrapper"
   }, [_c('h2', {
     staticClass: "date"
   }, [_vm._v("\n    " + _vm._s(_vm.dayEventsTitle) + "\n  ")]), _vm._v(" "), _c('div', {
     staticClass: "cal-events"
   }, [_vm._t("default", _vm._l((_vm.events), function(event, index) {
     return _c('div', {
+      key: index,
       staticClass: "event-item"
     }, [_c('cal-event-item', {
       attrs: {
@@ -1030,24 +1062,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "cal-wrapper"
   }, [_c('div', {
-    staticClass: "cal-header"
-  }, [_c('div', {
-    staticClass: "l",
-    on: {
-      "click": _vm.preMonth
-    }
-  }, [_c('div', {
-    staticClass: "arrow-left icon"
-  }, [_vm._v(" ")])]), _vm._v(" "), _c('div', {
-    staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.curYearMonth))]), _vm._v(" "), _c('div', {
-    staticClass: "r",
-    on: {
-      "click": _vm.nextMonth
-    }
-  }, [_c('div', {
-    staticClass: "arrow-right icon"
-  }, [_vm._v(" ")])])]), _vm._v(" "), _c('div', {
     staticClass: "cal-body"
   }, [_c('div', {
     staticClass: "weeks"
@@ -1068,26 +1082,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }, _obj[_vm.calendar.options.className] = (date.date == _vm.selectedDay), _obj ) ].concat( date.customClass)
     }, [_c('p', {
       staticClass: "date-num",
-      style: ({
-        color: date.title != undefined ? ((date.date == _vm.selectedDay) ? '#fff' : _vm.customColor) : 'inherit'
-      }),
       on: {
         "click": function($event) {
           _vm.handleChangeCurday(date)
         }
       }
-    }, [_vm._v("\n          " + _vm._s(date.status ? date.date.split('/')[2] : ' '))]), _vm._v(" "), (date.status ? (_vm.today == date.date) : false) ? _c('span', {
-      staticClass: "is-today",
-      style: ({
-        backgroundColor: _vm.customColor
-      })
-    }) : _vm._e(), _vm._v(" "), (date.status ? (date.title != undefined) : false) ? _c('span', {
-      staticClass: "is-event",
-      style: ({
-        borderColor: _vm.customColor,
-        backgroundColor: (date.date == _vm.selectedDay) ? _vm.customColor : 'inherit'
-      })
-    }) : _vm._e()])
+    }, [_vm._v("\n          " + _vm._s(date.status ? date.date.split('/')[2] : ' '))]), _vm._v(" "), _c('span', {
+      class: {
+        'is-today': date.status ? (_vm.today == date.date) : false, 'is-event-dot': date.status ? (date.title != undefined) : false
+      }
+    }), _vm._v(" "), _c('span', {
+      staticClass: "eventSpan",
+      class: {
+        'is-event': date.status ? (date.title != undefined) : false
+      }
+    })])
     var _obj;
   }))])])
 },staticRenderFns: []}
