@@ -107,7 +107,8 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: rgb(41,138,255);
+  text-decoration: none;
 }
 .t-center{
   text-align: center;

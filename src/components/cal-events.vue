@@ -1,8 +1,9 @@
 <template>
-  <div class="events-wrapper">
-    <h2 class="date">
+  <div class="events-wrapper" style="overflow: hidden">
+    <h2 class="date" style="width: 81%;line-height: 26px;float: left;">
       {{dayEventsTitle}}
     </h2>
+    <a href="/myaccount/returnBill" style="float: right;display: inline-block;line-height: 26px;width: 19%;">回款账单 &nbsp;></a>
     <div class="cal-events">
       <slot>
         <div v-for="(event, index) in events" class="event-item" :key="index">

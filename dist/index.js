@@ -468,6 +468,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -1006,10 +1007,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "events-wrapper"
+    staticClass: "events-wrapper",
+    staticStyle: {
+      "overflow": "hidden"
+    }
   }, [_c('h2', {
-    staticClass: "date"
-  }, [_vm._v("\n    " + _vm._s(_vm.dayEventsTitle) + "\n  ")]), _vm._v(" "), _c('div', {
+    staticClass: "date",
+    staticStyle: {
+      "width": "81%",
+      "line-height": "26px",
+      "float": "left"
+    }
+  }, [_vm._v("\n    " + _vm._s(_vm.dayEventsTitle) + "\n  ")]), _vm._v(" "), _c('a', {
+    staticStyle: {
+      "float": "right",
+      "display": "inline-block",
+      "line-height": "26px",
+      "width": "19%"
+    },
+    attrs: {
+      "href": "/myaccount/returnBill"
+    }
+  }, [_vm._v("回款账单  >")]), _vm._v(" "), _c('div', {
     staticClass: "cal-events"
   }, [_vm._t("default", _vm._l((_vm.events), function(event, index) {
     return _c('div', {

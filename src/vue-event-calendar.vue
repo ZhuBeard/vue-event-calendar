@@ -172,7 +172,7 @@ export default {
     .events-wrapper{
       width: 50%;
       color: @white;
-      padding: 20px 45px 40px;
+      padding: 20px 25px 40px;
       position: absolute;
       left: 50%;
       top: 0;
@@ -271,7 +271,7 @@ export default {
             top: 50%;
             z-index: 1;
             margin-left: -18px;
-            margin-top: -19px;
+            margin-top: -18px;
           }
           .is-event-dot{
             content: '';
@@ -295,25 +295,20 @@ export default {
     margin-left: -1px;
     border: 1px solid #eee;
     .cal-events{
-      height: 95%;
+      height: 100%;
       overflow-y: auto;
-      padding: 0 5px;
+      padding: 10px 5px 0;
       margin: 15px 0;
     }
     .date{
-      max-width: 60%;
-      min-width: 200px;
-      text-align: center;
-      color: @white;
-      background-color: rgba(0, 0, 0, 0.2);
-      border-radius: 20px;
-      margin: 0 auto;
-      font-size: 22px;
+      color: #333;
+      font-size: 20px;
+      font-weight: 100;
     }
     .event-item{
       padding: 5px 20px;
       margin-top: 15px;
-      box-shadow: 0 3px 11px 2px rgba(0,0,0,.1);
+      box-shadow: 0 3px 11px 2px rgba(41,138,255, .1);
       background-color: #fff;
       border-radius: 5px;
       color: #323232;
