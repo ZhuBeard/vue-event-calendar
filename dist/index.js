@@ -469,6 +469,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -633,7 +642,6 @@ var inBrowser = typeof window !== 'undefined';
         });
         tempArr.push(tempItem);
       }
-      console.log(tempArr);
       return tempArr;
     },
     today: function today() {
@@ -658,7 +666,6 @@ var inBrowser = typeof window !== 'undefined';
       this.$emit('month-changed', this.curYearMonth);
     },
     handleChangeCurday: function handleChangeCurday(date) {
-      console.log(date);
       if (date.status) {
         this.$emit('cur-day-changed', date.date);
       }
@@ -780,7 +787,6 @@ var inBrowser = typeof window !== 'undefined';
       var events = this.events.filter(function (event) {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__tools_js__["a" /* isEqualDateStr */])(event.date, date);
       });
-      console.log(events);
       this.selectedDayEvents = {
         date: date,
         events: events
@@ -1014,16 +1020,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h2', {
     staticClass: "date",
     staticStyle: {
-      "width": "81%",
+      "width": "70%",
       "line-height": "26px",
-      "float": "left"
+      "float": "left",
+      "margin": "0"
     }
   }, [_vm._v("\n    " + _vm._s(_vm.dayEventsTitle) + "\n  ")]), _vm._v(" "), _c('a', {
     staticStyle: {
       "float": "right",
       "display": "inline-block",
       "line-height": "26px",
-      "width": "19%"
+      "width": "30%",
+      "text-align": "right"
     },
     attrs: {
       "href": "/myaccount/returnBill"

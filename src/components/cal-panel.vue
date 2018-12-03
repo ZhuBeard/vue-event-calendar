@@ -95,7 +95,6 @@ export default {
           })
           tempArr.push(tempItem)
       }
-      console.log(tempArr)
       return tempArr
     },
     today () {
@@ -120,7 +119,6 @@ export default {
       this.$emit('month-changed', this.curYearMonth)
     },
     handleChangeCurday (date) {
-      console.log(date)
       if (date.status) {
         this.$emit('cur-day-changed', date.date)
       }

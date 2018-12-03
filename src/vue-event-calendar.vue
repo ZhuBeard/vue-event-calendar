@@ -99,7 +99,6 @@ export default {
       let events = this.events.filter(function(event) {
         return isEqualDateStr(event.date, date)
       })
-      console.log(events)
       this.selectedDayEvents = {
         date: date,
         events: events
