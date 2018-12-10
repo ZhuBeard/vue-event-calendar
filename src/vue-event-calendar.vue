@@ -151,8 +151,27 @@ export default {
   .__vev_calendar-wrapper{
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 50px;
     .cal-wrapper{
       width: 100%;
+      .cal-header{
+        position: absolute;
+        top: 0;
+        left: 350px;
+        width: 500px;
+        text-align: center;
+        .l,.r{
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+        }
+        .l{
+          left: 0;
+        }
+        .r{
+          right: 0
+        }
+      }
       .date-num{
         line-height: 65px;
         color: #333;
@@ -169,6 +188,7 @@ export default {
       }
     }
     .events-wrapper{
+      margin-top:  50px;
       width: 50%;
       color: @white;
       padding: 20px 25px 40px;

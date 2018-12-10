@@ -4,7 +4,8 @@
     width: 70%;
     line-height: 26px;
     float: left;
-    margin: 0;">
+    margin: 0;
+    font-size: 16px;">
       {{dayEventsTitle}}
     </h2>
     <a href="/myaccount/returnBill" style="
