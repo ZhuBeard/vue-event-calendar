@@ -214,7 +214,7 @@ module.exports = function normalizeComponent (
     monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
     format: 'yyyy年MM月',
     fullFormat: 'yyyy年MM月dd日',
-    dayEventsTitle: '全部回款',
+    dayEventsTitle: '当月回款',
     notHaveEvents: '没有回款'
   },
   us: {
@@ -478,6 +478,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -541,6 +542,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__i18n_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tools_js__ = __webpack_require__(0);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1023,7 +1029,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "width": "70%",
       "line-height": "26px",
       "float": "left",
-      "margin": "0"
+      "margin": "0",
+      "font-size": "16px"
     }
   }, [_vm._v("\n    " + _vm._s(_vm.dayEventsTitle) + "\n  ")]), _vm._v(" "), _c('a', {
     staticStyle: {
@@ -1089,6 +1096,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "cal-wrapper"
   }, [_c('div', {
+    staticClass: "cal-header"
+  }, [_c('div', {
+    staticClass: "l",
+    on: {
+      "click": _vm.preMonth
+    }
+  }, [_c('div', {
+    staticClass: "arrow-left icon"
+  }, [_vm._v(" ")])]), _vm._v(" "), _c('div', {
+    staticClass: "title"
+  }, [_vm._v(_vm._s(_vm.curYearMonth))]), _vm._v(" "), _c('div', {
+    staticClass: "r",
+    on: {
+      "click": _vm.nextMonth
+    }
+  }, [_c('div', {
+    staticClass: "arrow-right icon"
+  }, [_vm._v(" ")])])]), _vm._v(" "), _c('div', {
     staticClass: "cal-body"
   }, [_c('div', {
     staticClass: "weeks"

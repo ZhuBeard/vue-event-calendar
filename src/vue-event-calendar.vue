@@ -289,8 +289,8 @@ export default {
             left: 50%;
             top: 50%;
             z-index: 1;
-            margin-left: -18px;
-            margin-top: -18px;
+            margin-left: -17px;
+            margin-top: -17px;
           }
           .is-event-dot{
             content: '';
