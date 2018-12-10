@@ -157,7 +157,7 @@ export default {
       .cal-header{
         position: absolute;
         top: 0;
-        left: 350px;
+        left: 200px;
         width: 500px;
         text-align: center;
         .l,.r{
@@ -189,11 +189,11 @@ export default {
     }
     .events-wrapper{
       margin-top:  50px;
-      width: 50%;
+      width: 40%;
       color: @white;
       padding: 20px 25px 40px;
       position: absolute;
-      left: 50%;
+      left: 60%;
       top: 0;
       bottom: 0;
     }
@@ -236,7 +236,7 @@ export default {
   }
   .cal-wrapper{
     .cal-body{
-      width: 50%;
+      width: 60%;
       float: left;
       border: 1px solid #eee;
       padding: 10px;
