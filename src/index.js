@@ -28,7 +28,7 @@ function install (Vue, options = {}) {
       } else {
         let dateArr = dateString.split('/')
         dateArr = dateArr.map((item) => {
-          return parseInt(item, 10)
+          return parseInt(item)
         })
         this.$vm.CALENDAR_EVENTS_DATA.params = {
           curYear: dateArr[0],

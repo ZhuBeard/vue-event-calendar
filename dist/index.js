@@ -876,7 +876,7 @@ function install(Vue) {
       } else {
         var dateArr = dateString.split('/');
         dateArr = dateArr.map(function (item) {
-          return parseInt(item, 10);
+          return parseInt(item);
         });
         this.$vm.CALENDAR_EVENTS_DATA.params = {
           curYear: dateArr[0],
