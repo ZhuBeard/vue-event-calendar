@@ -157,7 +157,7 @@ export default {
       .cal-header{
         position: absolute;
         top: 0;
-        left: 200px;
+        left: 20px;
         width: 500px;
         text-align: center;
         .l,.r{
