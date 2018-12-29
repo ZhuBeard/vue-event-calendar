@@ -62,6 +62,9 @@ export default {
       required: false
     }
   },
+  created() {
+    this.$EventCalendar.toDate('2018/12/01')
+  },
   computed: {
     dayList () {
       let firstDay = new Date(this.calendar.params.curYear, this.calendar.params.curMonth, 1)

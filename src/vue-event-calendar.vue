@@ -184,7 +184,6 @@ export default {
     }
     .event{
       .date-num{
-        color: rgb(254,91,48);
       }
     }
     .events-wrapper{

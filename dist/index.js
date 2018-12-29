@@ -607,6 +607,10 @@ var inBrowser = typeof window !== 'undefined';
       required: false
     }
   },
+  created: function created() {
+    this.$EventCalendar.toDate('2018/12/01');
+  },
+
   computed: {
     dayList: function dayList() {
       var firstDay = new Date(this.calendar.params.curYear, this.calendar.params.curMonth, 1);
@@ -876,7 +880,7 @@ function install(Vue) {
       } else {
         var dateArr = dateString.split('/');
         dateArr = dateArr.map(function (item) {
-          return parseInt(item);
+          return parseInt(item, 10);
         });
         this.$vm.CALENDAR_EVENTS_DATA.params = {
           curYear: dateArr[0],
