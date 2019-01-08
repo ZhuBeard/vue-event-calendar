@@ -66,7 +66,7 @@ export default {
           return `${tempDate} ${i18n[this.locale].notHaveEvents}`
         }
       } else {
-        return false
+        return
       }
     },
     events () {

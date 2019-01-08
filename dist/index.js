@@ -522,7 +522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           return tempDate + ' ' + __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].notHaveEvents;
         }
       } else {
-        return false;
+        return;
       }
     },
     events: function events() {
