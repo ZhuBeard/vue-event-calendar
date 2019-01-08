@@ -83,7 +83,6 @@ export default {
           tempDate = Date.parse(new Date(oldVal.date))
           this.tabTitle = dateTimeFormatter(tempDate, i18n[this.locale].fullFormat)
         } else {
-          console.log(dateTimeFormatter(Date.parse(new Date(oldVal.date)), i18n[this.locale].fullFormat))
           tempDate = dateTimeFormatter(Date.parse(new Date(oldVal.date)), i18n[this.locale].fullFormat)
           this.tabTitle = `${tempDate} ${i18n[this.locale].notHaveEvents}`
         }
@@ -92,12 +91,11 @@ export default {
           tempDate = Date.parse(new Date(newVal.date))
           this.tabTitle = dateTimeFormatter(tempDate, i18n[this.locale].fullFormat)
         } else {
-          console.log(dateTimeFormatter(Date.parse(new Date(newVal.date)), i18n[this.locale].fullFormat))
           tempDate = dateTimeFormatter(Date.parse(new Date(newVal.date)), i18n[this.locale].fullFormat)
           this.tabTitle = `${tempDate} ${i18n[this.locale].notHaveEvents}`
         }
       }else{
-        
+
       }
     }
   },
