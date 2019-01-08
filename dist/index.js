@@ -513,7 +513,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     dayEventsTitle: function dayEventsTitle() {
       if (this.title) return this.title;
-      console.log(this.dayEvents);
       if (this.dayEvents.date !== 'all') {
         var tempDate = void 0;
         if (this.dayEvents.events.length !== 0) {
@@ -541,6 +540,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         } else {
           console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(Date.parse(new Date(oldVal.date)), __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat));
           tempDate = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(Date.parse(new Date(oldVal.date)), __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat);
+          this.tabTitle = tempDate + ' ' + __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].notHaveEvents;
+        }
+      } else if (newVal.date != 'all') {
+        if (this.dayEvents.events.length !== 0) {
+          tempDate = Date.parse(new Date(newVal.date));
+          this.tabTitle = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(tempDate, __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat);
+        } else {
+          console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(Date.parse(new Date(newVal.date)), __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat));
+          tempDate = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(Date.parse(new Date(newVal.date)), __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat);
           this.tabTitle = tempDate + ' ' + __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].notHaveEvents;
         }
       } else {}
