@@ -65,8 +65,6 @@ export default {
           tempDate = dateTimeFormatter(Date.parse(new Date(this.dayEvents.date)), i18n[this.locale].fullFormat)
           return `${tempDate} ${i18n[this.locale].notHaveEvents}`
         }
-      } else {
-        return i18n[this.locale].dayEventsTitle
       }
     },
     events () {

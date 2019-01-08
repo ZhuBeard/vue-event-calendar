@@ -214,7 +214,7 @@ module.exports = function normalizeComponent (
     monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
     format: 'yyyy年MM月',
     fullFormat: 'yyyy年MM月dd日',
-    dayEventsTitle: 'yyyy年MM月dd日',
+    dayEventsTitle: '当月回款',
     notHaveEvents: '没有回款'
   },
   us: {
@@ -521,8 +521,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           tempDate = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(Date.parse(new Date(this.dayEvents.date)), __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat);
           return tempDate + ' ' + __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].notHaveEvents;
         }
-      } else {
-        return __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].dayEventsTitle;
       }
     },
     events: function events() {
