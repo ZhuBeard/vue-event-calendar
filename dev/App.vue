@@ -8,7 +8,7 @@
       @month-changed="handleMonthChanged"
     ></vue-event-calendar>
     <h2 class="t-center">Custom template</h2>
-    <vue-event-calendar :events="demoEvents">
+    <vue-event-calendar :nowDate='nowDate' :events="demoEvents">
       <template scope="props">
         <div v-for="(event, index) in props.showEvents" class="event-item">
           <!-- In here do whatever you want, make you owner event template -->
@@ -25,23 +25,24 @@ export default {
   name: 'app',
   data () {
     return {
+      nowDate: '',
       demoEvents: [{
         date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
         title: 'Title-1',
         desc: 'longlonglong description',
         type: '1'
       },{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+2}`,
         title: 'Title-1',
         desc: 'longlonglong description',
         type: '1'
       },{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+3}`,
         title: 'Title-1',
         desc: 'longlonglong description',
         type: '1'
       },{
-        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+1}`,
+        date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()+4}`,
         title: 'Title-1',
         desc: 'longlonglong description',
         type: '1'
@@ -74,6 +75,9 @@ export default {
   },
   methods: {
     handleDayChanged (data) {
+      if(data.date){
+        this.nowDate = data.date
+      }
     },
     handleMonthChanged (data) {
     }

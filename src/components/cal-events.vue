@@ -32,7 +32,8 @@ export default {
   name: 'cal-events',
   data () {
     return {
-      i18n
+      i18n,
+      tabTitle: ''
     }
   },
   components: {
@@ -56,6 +57,7 @@ export default {
   computed: {
     dayEventsTitle () {
       if (this.title) return this.title
+      console.log(this.dayEvents)
       if (this.dayEvents.date !== 'all') {
         let tempDate
         if (this.dayEvents.events.length !== 0) {
@@ -65,12 +67,30 @@ export default {
           tempDate = dateTimeFormatter(Date.parse(new Date(this.dayEvents.date)), i18n[this.locale].fullFormat)
           return `${tempDate} ${i18n[this.locale].notHaveEvents}`
         }
-      } else {
-        return
+      } 
+      else {
+        return this.tabTitle
       }
     },
     events () {
       return this.dayEvents.events
+    }
+  },
+  watch: {
+    dayEvents(oldVal, newVal){
+      let tempDate
+      if(oldVal.date != 'all' && newVal.date == 'all'){
+        if (this.dayEvents.events.length !== 0) {
+          tempDate = Date.parse(new Date(oldVal.date))
+          this.tabTitle = dateTimeFormatter(tempDate, i18n[this.locale].fullFormat)
+        } else {
+          console.log(dateTimeFormatter(Date.parse(new Date(oldVal.date)), i18n[this.locale].fullFormat))
+          tempDate = dateTimeFormatter(Date.parse(new Date(oldVal.date)), i18n[this.locale].fullFormat)
+          this.tabTitle = `${tempDate} ${i18n[this.locale].notHaveEvents}`
+        }
+      }else{
+
+      }
     }
   },
   methods: {

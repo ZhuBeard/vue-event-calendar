@@ -9,6 +9,7 @@
     </cal-panel>
     <cal-events
       :title="title"
+      :nowDate="nowDate"
       :dayEvents="selectedDayEvents"
       :locale="calendarOptions.options.locale"
       :color="calendarOptions.options.color">
@@ -39,6 +40,7 @@ export default {
   },
   props: {
     title: String,
+    nowDate: String,
     events: {
       type: Array,
       required: true,

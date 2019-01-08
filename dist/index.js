@@ -487,7 +487,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   name: 'cal-events',
   data: function data() {
     return {
-      i18n: __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */]
+      i18n: __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */],
+      tabTitle: ''
     };
   },
 
@@ -512,6 +513,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     dayEventsTitle: function dayEventsTitle() {
       if (this.title) return this.title;
+      console.log(this.dayEvents);
       if (this.dayEvents.date !== 'all') {
         var tempDate = void 0;
         if (this.dayEvents.events.length !== 0) {
@@ -522,11 +524,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           return tempDate + ' ' + __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].notHaveEvents;
         }
       } else {
-        return;
+        return this.tabTitle;
       }
     },
     events: function events() {
       return this.dayEvents.events;
+    }
+  },
+  watch: {
+    dayEvents: function dayEvents(oldVal, newVal) {
+      var tempDate = void 0;
+      if (oldVal.date != 'all' && newVal.date == 'all') {
+        if (this.dayEvents.events.length !== 0) {
+          tempDate = Date.parse(new Date(oldVal.date));
+          this.tabTitle = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(tempDate, __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat);
+        } else {
+          console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(Date.parse(new Date(oldVal.date)), __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat));
+          tempDate = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tools_js__["b" /* dateTimeFormatter */])(Date.parse(new Date(oldVal.date)), __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].fullFormat);
+          this.tabTitle = tempDate + ' ' + __WEBPACK_IMPORTED_MODULE_0__i18n_js__["a" /* default */][this.locale].notHaveEvents;
+        }
+      } else {}
     }
   },
   methods: {
@@ -712,6 +729,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -736,6 +754,7 @@ var inBrowser = typeof window !== 'undefined';
 
   props: {
     title: String,
+    nowDate: String,
     events: {
       type: Array,
       required: true,
@@ -1083,6 +1102,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('cal-events', {
     attrs: {
       "title": _vm.title,
+      "nowDate": _vm.nowDate,
       "dayEvents": _vm.selectedDayEvents,
       "locale": _vm.calendarOptions.options.locale,
       "color": _vm.calendarOptions.options.color
