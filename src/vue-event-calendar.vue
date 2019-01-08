@@ -317,6 +317,7 @@ export default {
       overflow-y: auto;
       padding: 10px 5px 0;
       margin: 15px 0;
+      height: 400px;
     }
     .date{
       color: #333;
