@@ -8,7 +8,7 @@
     font-size: 16px;">
       {{dayEventsTitle}}
     </h2>
-    <a href="/myaccount/returnBill" style="
+    <a :href="'/myaccount/returnBill?date='+dayEvents.date" style="
     float: right;
     display: inline-block;
     line-height: 26px;

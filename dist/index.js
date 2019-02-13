@@ -1070,7 +1070,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "text-align": "right"
     },
     attrs: {
-      "href": "/myaccount/returnBill"
+      "href": '/myaccount/returnBill?date=' + _vm.dayEvents.date
     }
   }, [_vm._v("回款账单  >")]), _vm._v(" "), _c('div', {
     staticClass: "cal-events"
