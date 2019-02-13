@@ -152,8 +152,7 @@ export default {
 @media screen and (min-width: 768px) {
   .__vev_calendar-wrapper{
     max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 50px;
+    margin: 50px auto 0;
     .cal-wrapper{
       width: 100%;
       .cal-header{
@@ -189,7 +188,6 @@ export default {
       }
     }
     .events-wrapper{
-      margin-top:  50px;
       width: 40%;
       color: @white;
       padding: 20px 25px 40px;
