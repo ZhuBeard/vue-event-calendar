@@ -215,7 +215,7 @@ module.exports = function normalizeComponent (
     format: 'yyyy年MM月',
     fullFormat: 'yyyy年MM月dd日',
     dayEventsTitle: '当月回款',
-    notHaveEvents: '没有回款'
+    notHaveEvents: '没有账单'
   },
   us: {
     dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
