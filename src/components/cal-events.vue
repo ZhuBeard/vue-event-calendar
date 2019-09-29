@@ -8,7 +8,8 @@
     font-size: 16px;">
       {{dayEventsTitle}}
     </h2>
-    <a :href="'/myaccount/returnBill?date='+dayEvents.date" style="
+    <!-- <a :href="'/myaccount/returnBill?date='+dayEvents.date" style=" -->
+    <a href='/myaccount/rentRecord' style="
     float: right;
     display: inline-block;
     line-height: 26px;

@@ -479,6 +479,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -1070,7 +1071,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "text-align": "right"
     },
     attrs: {
-      "href": '/myaccount/returnBill?date=' + _vm.dayEvents.date
+      "href": "/myaccount/rentRecord"
     }
   }, [_vm._v("转租账单  >")]), _vm._v(" "), _c('div', {
     staticClass: "cal-events"
