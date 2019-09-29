@@ -1127,24 +1127,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "cal-wrapper"
   }, [_c('div', {
-    staticClass: "cal-header"
-  }, [_c('div', {
-    staticClass: "l",
-    on: {
-      "click": _vm.preMonth
-    }
-  }, [_c('div', {
-    staticClass: "arrow-left icon"
-  }, [_vm._v(" ")])]), _vm._v(" "), _c('div', {
-    staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.curYearMonth))]), _vm._v(" "), _c('div', {
-    staticClass: "r",
-    on: {
-      "click": _vm.nextMonth
-    }
-  }, [_c('div', {
-    staticClass: "arrow-right icon"
-  }, [_vm._v(" ")])])]), _vm._v(" "), _c('div', {
     staticClass: "cal-body"
   }, [_c('div', {
     staticClass: "weeks"
