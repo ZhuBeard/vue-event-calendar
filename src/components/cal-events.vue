@@ -13,7 +13,7 @@
     display: inline-block;
     line-height: 26px;
     width: 30%;
-    text-align: right;">回款账单 &nbsp;></a>
+    text-align: right;">转租账单 &nbsp;></a>
     <div class="cal-events">
       <slot>
         <div v-for="(event, index) in events" class="event-item" :key="index">
