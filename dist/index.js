@@ -1071,7 +1071,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "text-align": "right"
     },
     attrs: {
-      "href": "/myaccount/rentRecord"
+      "href": "/myaccount/rentBill"
     }
   }, [_vm._v("转租账单  >")]), _vm._v(" "), _c('div', {
     staticClass: "cal-events"

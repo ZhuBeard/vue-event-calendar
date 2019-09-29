@@ -9,7 +9,7 @@
       {{dayEventsTitle}}
     </h2>
     <!-- <a :href="'/myaccount/returnBill?date='+dayEvents.date" style=" -->
-    <a href='/myaccount/rentRecord' style="
+    <a href='/myaccount/rentBill' style="
     float: right;
     display: inline-block;
     line-height: 26px;
